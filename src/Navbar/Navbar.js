@@ -9,13 +9,14 @@ export const Navbar = () => {
       settoggle(!toggle);
   }
 
+  console.log(toggle);
   return (
     <div className='container'>
         <div className='name'>
             RAJAT
         </div>
 
-        <div className='tabs'>
+        <div className={toggle? 'tabs active' : 'tabs nonactive'}>
             <ul className='cols'>
                 <li className='navLinks'>Home</li>
                 <li className='navLinks'>About</li>
@@ -25,9 +26,9 @@ export const Navbar = () => {
         </div>
 
         <div className='burger' onClick={togglefunc}>
-            <div className='line1'></div>
-            <div className='line2'></div>
-            <div className='line3'></div>
+            <div className={toggle?'line1 active' : 'line1 nonactive'}></div>
+            <div className={toggle?'line2 active' : 'line2 nonactive'}></div>
+            <div className={toggle?'line3 active' : 'line3 nonactive'}></div>
         </div>
     </div>
   )
